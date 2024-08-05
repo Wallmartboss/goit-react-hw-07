@@ -1,15 +1,15 @@
 import { Field, Form, Formik } from 'formik';
 import s from './ContactsForm.module.css';
 import { useDispatch } from 'react-redux';
-import { nanoid } from '@reduxjs/toolkit';
-import { addContact } from '../../redux/contactsSlice';
+// import { nanoid } from '@reduxjs/toolkit';
+import { addContact } from '../../redux/contactsOps';
 
 const ContactsForm = () => {
   const dispatch = useDispatch();
-  const initialValues = { contact: '', id: '' };
+  const initialValues = { contact: '' };
 
   const onSubmit = (values, options) => {
-    const newItem = { contact: values.contact, id: nanoid() };
+    const newItem = { contact: values.name };
       dispatch(addContact(newItem));
       options.resetForm();
   };
@@ -25,3 +25,5 @@ const ContactsForm = () => {
   );
 };
 export default ContactsForm
+
+
