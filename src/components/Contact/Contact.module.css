@@ -1,0 +1,14 @@
+.name {
+  width: 200px;
+}
+.btn {
+  width: 80px;
+}
+.item {
+  display: flex;
+  width: 350px;
+  flex-wrap: nowrap;
+  gap: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
