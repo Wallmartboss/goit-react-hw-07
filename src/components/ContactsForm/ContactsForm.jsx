@@ -8,9 +8,7 @@ const ContactsForm = () => {
 
   const onSubmit = (values, options) => {
     dispatch(addContact(values));
-    console.log(values);
-    
-      options.resetForm();
+    options.resetForm();
   };
   return (
     <div className={s.addFormWrapper}>
