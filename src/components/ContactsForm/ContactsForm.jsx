@@ -1,15 +1,12 @@
 import { Field, Form, Formik } from 'formik';
 import s from './ContactsForm.module.css';
 import { useDispatch } from 'react-redux';
-// import { nanoid } from '@reduxjs/toolkit';
 import { addContact } from '../../redux/contactsOps';
 
 const ContactsForm = () => {
   const dispatch = useDispatch();
-  // const initialValues = {};
 
   const onSubmit = (values, options) => {
-    // const newItem = { name: values.name };
     dispatch(addContact(values));
     console.log(values);
     

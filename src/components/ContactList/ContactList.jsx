@@ -6,7 +6,6 @@ import Contact from '../Contact/Contact';
 const ContactList = () => {
   const contacts = useSelector(selectFilteredContacts);
 
-
   return (
     <ul>
       {contacts.map(item => (
