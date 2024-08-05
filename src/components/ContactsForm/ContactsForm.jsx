@@ -6,18 +6,20 @@ import { addContact } from '../../redux/contactsOps';
 
 const ContactsForm = () => {
   const dispatch = useDispatch();
-  const initialValues = { contact: '' };
+  // const initialValues = {};
 
   const onSubmit = (values, options) => {
-    const newItem = { contact: values.name };
-      dispatch(addContact(newItem));
+    // const newItem = { name: values.name };
+    dispatch(addContact(values));
+    console.log(values);
+    
       options.resetForm();
   };
   return (
     <div className={s.addFormWrapper}>
-      <Formik initialValues={initialValues} onSubmit={onSubmit}>
+      <Formik initialValues={{ name: '' }} onSubmit={onSubmit}>
         <Form>
-          <Field className={s.input} name='contact' placeholder='Enter new contact' />
+          <Field className={s.input} name='name' placeholder='Enter new contact' />
           <button type='submit'>Add contact</button>
         </Form>
       </Formik>
